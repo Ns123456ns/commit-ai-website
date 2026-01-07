@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commit AI Engineering Onboarding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">◈</span>
+                <h1>Commit AI</h1>
+            </div>
+            <p class="tagline">Engineering Onboarding — AWS Service Recommendations</p>
+        </div>
+    </header>
+
+    <nav class="tabs-container">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab active" data-tab="rag">
+                    <span class="tab-icon">🔍</span>
+                    <span class="tab-label">RAG</span>
+                </button>
+                <button class="tab" data-tab="vision">
+                    <span class="tab-icon">👁️</span>
+                    <span class="tab-label">Vision</span>
+                </button>
+                <button class="tab" data-tab="ocr">
+                    <span class="tab-icon">📄</span>
+                    <span class="tab-label">OCR</span>
+                </button>
+                <button class="tab" data-tab="voice">
+                    <span class="tab-icon">🎙️</span>
+                    <span class="tab-label">Voice</span>
+                </button>
+                <button class="tab" data-tab="storage">
+                    <span class="tab-icon">💾</span>
+                    <span class="tab-label">Storage</span>
+                </button>
+                <button class="tab" data-tab="agent">
+                    <span class="tab-icon">🤖</span>
+                    <span class="tab-label">Agent Core</span>
+                </button>
+                <button class="tab" data-tab="llm">
+                    <span class="tab-icon">🧠</span>
+                    <span class="tab-label">LLM Models</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- RAG Section -->
+            <section class="tab-content active" id="rag">
+                <div class="section-header">
+                    <h2>Retrieval-Augmented Generation (RAG)</h2>
+                    <p>Build intelligent AI applications that retrieve and use your enterprise data</p>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="rec-header">
+                        <div class="rec-badge">RECOMMENDED</div>
+                        <h3>AWS Bedrock Knowledge Base + S3 Vectors</h3>
+                    </div>
+
+                    <div class="why-section">
+                        <h4>💡 Why Use This Service?</h4>
+                        <p>
+                            AWS Bedrock Knowledge Base with S3 Vectors is the <strong>most cost-effective solution</strong> for RAG workloads. 
+                            Unlike OpenSearch (which can cost $100+/month just for a small cluster), S3 Vectors provides native vector 
+                            support directly in S3, reducing costs by <strong>up to 90%</strong>.
+                        </p>
+                        <p>
+                            It's a fully managed service that handles chunking, embedding, and retrieval automatically. 
+                            You simply upload your documents to S3, and the Knowledge Base indexes them for semantic search.
+                            Perfect for chatbots, Q&A systems, and document search applications.
+                        </p>
+                    </div>
+
+                    <div class="pros-cons-grid">
+                        <div class="pros-section">
+                            <h4>✅ Pros</h4>
+                            <ul>
+                                <li><strong>Cost-Effective:</strong> S3 Vectors is ~90% cheaper than OpenSearch for vector storage</li>
+                                <li><strong>Fully Managed:</strong> AWS handles infrastructure, scaling, and maintenance</li>
+                                <li><strong>Easy Integration:</strong> Works seamlessly with Bedrock LLMs (Claude, Titan, etc.)</li>
+                                <li><strong>Auto-Sync:</strong> Automatically updates when source documents change</li>
+                                <li><strong>Multiple Sources:</strong> Connect S3, Confluence, SharePoint, and more</li>
+                            </ul>
+                        </div>
+                        <div class="cons-section">
+                            <h4>❌ Cons</h4>
+                            <ul>
+                                <li><strong>Less Flexible:</strong> Limited customization compared to self-managed solutions</li>
+                                <li><strong>AWS Lock-in:</strong> Tightly coupled with AWS Bedrock ecosystem</li>
+                                <li><strong>Query Limits:</strong> May have throughput limits for very high-volume use cases</li>
+                                <li><strong>Learning Curve:</strong> Requires understanding of Bedrock concepts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <h4>💰 Pricing</h4>
+                        <div class="pricing-table">
+                            <div class="price-row">
+                                <span class="price-label">S3 Vector Storage</span>
+                                <span class="price-value">$0.023<span class="price-unit">/GB/month</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">PUT Requests</span>
+                                <span class="price-value">$0.005<span class="price-unit">/1,000 requests</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">GET/Query Requests</span>
+                                <span class="price-value">$0.0004<span class="price-unit">/1,000 requests</span></span>
+                            </div>
+                        </div>
+                        <a href="https://aws.amazon.com/s3/pricing/" target="_blank" class="aws-link">View AWS Documentation →</a>
+                    </div>
+                </div>
+
+                <div class="calculator-section">
+                    <h3>📊 Cost Calculator</h3>
+                    <div class="calculator">
+                        <div class="calc-input-group">
+                            <label for="rag-storage">Storage (GB)</label>
+                            <input type="number" id="rag-storage" value="100" min="0">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="rag-puts">PUT Requests (thousands)</label>
+                            <input type="number" id="rag-puts" value="100" min="0">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="rag-gets">GET Requests (thousands)</label>
+                            <input type="number" id="rag-gets" value="1000" min="0">
+                        </div>
+                        <div class="calc-result">
+                            <span class="calc-label">Estimated Monthly Cost</span>
+                            <span class="calc-value" id="rag-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vision Section -->
+            <section class="tab-content" id="vision">
+                <div class="section-header">
+                    <h2>Vision Services</h2>
+                    <p>Add image and video analysis capabilities to your applications</p>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="rec-header">
+                        <div class="rec-badge">RECOMMENDED</div>
+                        <h3>Amazon Rekognition</h3>
+                    </div>
+
+                    <div class="why-section">
+                        <h4>💡 Why Use This Service?</h4>
+                        <p>
+                            Amazon Rekognition is the <strong>go-to service for computer vision</strong> on AWS. It provides 
+                            pre-trained deep learning models for object detection, facial analysis, text extraction, and content moderation 
+                            — all without requiring ML expertise.
+                        </p>
+                        <p>
+                            It's ideal for applications like identity verification, content moderation, media analysis, 
+                            and security surveillance. The pay-per-use model means you only pay for what you analyze.
+                        </p>
+                    </div>
+
+                    <div class="pros-cons-grid">
+                        <div class="pros-section">
+                            <h4>✅ Pros</h4>
+                            <ul>
+                                <li><strong>No ML Expertise Needed:</strong> Pre-trained models ready to use via API</li>
+                                <li><strong>Comprehensive Features:</strong> Labels, faces, text, celebrities, moderation all-in-one</li>
+                                <li><strong>Real-Time & Batch:</strong> Works with both streaming video and stored media</li>
+                                <li><strong>Custom Labels:</strong> Train custom models for domain-specific objects</li>
+                                <li><strong>Scalable:</strong> Handles millions of images without infrastructure management</li>
+                            </ul>
+                        </div>
+                        <div class="cons-section">
+                            <h4>❌ Cons</h4>
+                            <ul>
+                                <li><strong>Cost at Scale:</strong> Can become expensive with high-volume processing</li>
+                                <li><strong>Privacy Concerns:</strong> Facial recognition raises ethical/legal considerations</li>
+                                <li><strong>Limited Customization:</strong> Pre-trained models may not fit all use cases</li>
+                                <li><strong>Region Availability:</strong> Not available in all AWS regions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <h4>💰 Pricing</h4>
+                        <div class="pricing-table">
+                            <div class="price-row">
+                                <span class="price-label">Image Analysis (first 1M/month)</span>
+                                <span class="price-value">$1.00<span class="price-unit">/1,000 images</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Image Analysis (1M-10M/month)</span>
+                                <span class="price-value">$0.80<span class="price-unit">/1,000 images</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Video Analysis (Label Detection)</span>
+                                <span class="price-value">$0.10<span class="price-unit">/minute</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Face Detection</span>
+                                <span class="price-value">$0.001<span class="price-unit">/image</span></span>
+                            </div>
+                        </div>
+                        <a href="https://aws.amazon.com/rekognition/pricing/" target="_blank" class="aws-link">View AWS Documentation →</a>
+                    </div>
+                </div>
+
+                <div class="calculator-section">
+                    <h3>📊 Cost Calculator</h3>
+                    <div class="calculator">
+                        <div class="calc-input-group">
+                            <label for="vision-images">Images (thousands)</label>
+                            <input type="number" id="vision-images" value="10" min="0">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="vision-video">Video (minutes)</label>
+                            <input type="number" id="vision-video" value="60" min="0">
+                        </div>
+                        <div class="calc-result">
+                            <span class="calc-label">Estimated Monthly Cost</span>
+                            <span class="calc-value" id="vision-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OCR Section -->
+            <section class="tab-content" id="ocr">
+                <div class="section-header">
+                    <h2>OCR (Document Processing)</h2>
+                    <p>Extract text and structured data from scanned documents and images</p>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="rec-header">
+                        <div class="rec-badge ocr">RECOMMENDED</div>
+                        <h3>Amazon Textract</h3>
+                    </div>
+
+                    <div class="why-section">
+                        <h4>💡 Why Use This Service?</h4>
+                        <p>
+                            Amazon Textract is the <strong>best choice for document OCR</strong> on AWS. Unlike basic OCR that just 
+                            extracts text, Textract understands document structure — it can extract data from forms, tables, 
+                            invoices, and receipts while preserving the relationships between fields.
+                        </p>
+                        <p>
+                            Use Textract for processing scanned documents, automating data entry, digitizing paper archives, 
+                            and extracting structured data from PDFs. It handles handwriting too!
+                        </p>
+                    </div>
+
+                    <div class="pros-cons-grid">
+                        <div class="pros-section">
+                            <h4>✅ Pros</h4>
+                            <ul>
+                                <li><strong>Beyond OCR:</strong> Understands forms, tables, and document structure</li>
+                                <li><strong>Handwriting Support:</strong> Extracts handwritten text accurately</li>
+                                <li><strong>Invoice/Receipt Processing:</strong> Built-in expense analysis</li>
+                                <li><strong>Free Tier:</strong> 1,000 pages/month free</li>
+                                <li><strong>High Accuracy:</strong> ML-powered extraction beats traditional OCR</li>
+                            </ul>
+                        </div>
+                        <div class="cons-section">
+                            <h4>❌ Cons</h4>
+                            <ul>
+                                <li><strong>Cost at Volume:</strong> Can add up with large document processing</li>
+                                <li><strong>Quality Dependent:</strong> Poor scans may need preprocessing</li>
+                                <li><strong>Variable Formats:</strong> Highly custom layouts may need tuning</li>
+                                <li><strong>No Real-Time:</strong> Async processing, not instant</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <h4>💰 Pricing</h4>
+                        <div class="pricing-table">
+                            <div class="price-row">
+                                <span class="price-label">DetectDocumentText (Basic OCR)</span>
+                                <span class="price-value">$0.0015<span class="price-unit">/page</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">AnalyzeDocument (Forms/Tables)</span>
+                                <span class="price-value">$0.015<span class="price-unit">/page</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">AnalyzeExpense (Invoices)</span>
+                                <span class="price-value">$0.01<span class="price-unit">/page</span></span>
+                            </div>
+                            <div class="price-row highlight">
+                                <span class="price-label">Free Tier</span>
+                                <span class="price-value free">1,000<span class="price-unit"> pages/month</span></span>
+                            </div>
+                        </div>
+                        <a href="https://aws.amazon.com/textract/pricing/" target="_blank" class="aws-link">View AWS Documentation →</a>
+                    </div>
+                </div>
+
+                <div class="calculator-section">
+                    <h3>📊 Cost Calculator</h3>
+                    <div class="calculator">
+                        <div class="calc-input-group">
+                            <label for="ocr-basic">Basic OCR Pages</label>
+                            <input type="number" id="ocr-basic" value="5000" min="0">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="ocr-forms">Forms/Tables Pages</label>
+                            <input type="number" id="ocr-forms" value="500" min="0">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="ocr-expense">Invoice/Expense Pages</label>
+                            <input type="number" id="ocr-expense" value="200" min="0">
+                        </div>
+                        <div class="calc-result">
+                            <span class="calc-label">Estimated Monthly Cost</span>
+                            <span class="calc-value" id="ocr-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Voice Section -->
+            <section class="tab-content" id="voice">
+                <div class="section-header">
+                    <h2>Voice Services</h2>
+                    <p>Enable natural voice interactions with AI-powered speech capabilities</p>
+                </div>
+
+                <div class="recommendation-card featured">
+                    <div class="rec-header">
+                        <div class="rec-badge hot">🔥 RECOMMENDED</div>
+                        <h3>Amazon Nova Sonic</h3>
+                        <span class="new-badge">NEW</span>
+                    </div>
+
+                    <div class="why-section">
+                        <h4>💡 Why Use This Service?</h4>
+                        <p>
+                            Amazon Nova Sonic is AWS's <strong>latest speech-to-speech foundation model</strong> that enables 
+                            real-time, human-like conversational AI. Unlike traditional TTS/STT pipelines, Nova Sonic 
+                            unifies understanding and generation in a single model for <strong>ultra-low latency</strong> voice interactions.
+                        </p>
+                        <p>
+                            It's perfect for building voice agents, AI assistants, customer service bots, and interactive 
+                            voice response (IVR) systems. Supports multiple languages with natural intonation and emotion.
+                        </p>
+                    </div>
+
+                    <div class="pros-cons-grid">
+                        <div class="pros-section">
+                            <h4>✅ Pros</h4>
+                            <ul>
+                                <li><strong>Real-Time:</strong> Ultra-low latency for natural conversations</li>
+                                <li><strong>Unified Model:</strong> Speech-to-speech without separate STT/TTS</li>
+                                <li><strong>Natural Voice:</strong> Human-like intonation, emotion, and pacing</li>
+                                <li><strong>Multilingual:</strong> Supports multiple languages and accents</li>
+                                <li><strong>Easy Integration:</strong> Works with Amazon Connect, Vonage, SignalWire</li>
+                            </ul>
+                        </div>
+                        <div class="cons-section">
+                            <h4>❌ Cons</h4>
+                            <ul>
+                                <li><strong>New Service:</strong> Less community resources and examples</li>
+                                <li><strong>AWS Ecosystem:</strong> Best performance within AWS environment</li>
+                                <li><strong>Compute Intensive:</strong> May require more resources than traditional TTS</li>
+                                <li><strong>Learning Curve:</strong> New API patterns to learn</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <h4>💰 Pricing</h4>
+                        <div class="pricing-table">
+                            <div class="price-row">
+                                <span class="price-label">Input Audio</span>
+                                <span class="price-value">$0.0008<span class="price-unit">/second</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Output Audio</span>
+                                <span class="price-value">$0.0032<span class="price-unit">/second</span></span>
+                            </div>
+                        </div>
+                        <a href="https://aws.amazon.com/bedrock/pricing/" target="_blank" class="aws-link">View AWS Bedrock Pricing →</a>
+                    </div>
+                </div>
+
+                <div class="alternative-section">
+                    <h3>📋 Alternative Services</h3>
+                    
+                    <div class="alternative-cards">
+                        <div class="alt-card">
+                            <h4>Amazon Polly (Text-to-Speech)</h4>
+                            <p>Traditional TTS for converting text to lifelike speech. Good for pre-recorded content and simpler use cases.</p>
+                            <div class="alt-pricing">
+                                <span>Standard: $4.00/1M chars</span>
+                                <span>Neural: $16.00/1M chars</span>
+                            </div>
+                            <a href="https://aws.amazon.com/polly/pricing/" target="_blank" class="aws-link">Learn more →</a>
+                        </div>
+                        
+                        <div class="alt-card">
+                            <h4>Amazon Transcribe (Speech-to-Text)</h4>
+                            <p>Convert audio to text with high accuracy. Ideal for transcription, subtitles, and call analytics.</p>
+                            <div class="alt-pricing">
+                                <span>Standard: $0.024/minute</span>
+                            </div>
+                            <a href="https://aws.amazon.com/transcribe/pricing/" target="_blank" class="aws-link">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-section">
+                    <h3>📊 Cost Calculator (Nova Sonic)</h3>
+                    <div class="calculator">
+                        <div class="calc-input-group">
+                            <label for="voice-input-mins">Input Audio (minutes)</label>
+                            <input type="number" id="voice-input-mins" value="100" min="0">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="voice-output-mins">Output Audio (minutes)</label>
+                            <input type="number" id="voice-output-mins" value="100" min="0">
+                        </div>
+                        <div class="calc-result">
+                            <span class="calc-label">Estimated Monthly Cost</span>
+                            <span class="calc-value" id="voice-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Storage Section -->
+            <section class="tab-content" id="storage">
+                <div class="section-header">
+                    <h2>Storage Solutions</h2>
+                    <p>Choose the right storage solution based on your access patterns and cost requirements</p>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="rec-header">
+                        <div class="rec-badge">BUDGET CHOICE</div>
+                        <h3>Amazon S3 (Simple Storage)</h3>
+                    </div>
+
+                    <div class="why-section">
+                        <h4>💡 Why Use This Service?</h4>
+                        <p>
+                            Amazon S3 is the <strong>most cost-effective storage option</strong> for large files and data lakes. 
+                            At just $0.023/GB/month, it's ideal for storing documents, images, videos, backups, and any 
+                            unstructured data. It offers 99.999999999% (11 9's) durability.
+                        </p>
+                        <p>
+                            Use S3 when you need to store large amounts of data that doesn't require millisecond-level 
+                            access times. Perfect for AI training data, model artifacts, and document storage for RAG.
+                        </p>
+                    </div>
+
+                    <div class="pros-cons-grid">
+                        <div class="pros-section">
+                            <h4>✅ Pros</h4>
+                            <ul>
+                                <li><strong>Extremely Cheap:</strong> $0.023/GB - store TBs for pennies</li>
+                                <li><strong>Highly Durable:</strong> 11 9's durability - virtually never lose data</li>
+                                <li><strong>Flexible Tiers:</strong> Glacier for archival at $0.004/GB</li>
+                                <li><strong>Unlimited Scale:</strong> No capacity planning needed</li>
+                                <li><strong>Versatile:</strong> Static hosting, data lakes, backups</li>
+                            </ul>
+                        </div>
+                        <div class="cons-section">
+                            <h4>❌ Cons</h4>
+                            <ul>
+                                <li><strong>Higher Latency:</strong> Not suitable for real-time queries</li>
+                                <li><strong>No Queries:</strong> Can't query data directly (need Athena)</li>
+                                <li><strong>Eventual Consistency:</strong> Updates may take time to propagate</li>
+                                <li><strong>Egress Costs:</strong> Data transfer out can add up</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <h4>💰 Pricing</h4>
+                        <div class="pricing-table">
+                            <div class="price-row">
+                                <span class="price-label">Standard Storage</span>
+                                <span class="price-value">$0.023<span class="price-unit">/GB/month</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Glacier Instant Retrieval</span>
+                                <span class="price-value">$0.005<span class="price-unit">/GB/month</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Glacier Deep Archive</span>
+                                <span class="price-value">$0.00099<span class="price-unit">/GB/month</span></span>
+                            </div>
+                        </div>
+                        <a href="https://aws.amazon.com/s3/pricing/" target="_blank" class="aws-link">View AWS Documentation →</a>
+                    </div>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="rec-header">
+                        <div class="rec-badge secondary">COMPLEX NEEDS</div>
+                        <h3>Amazon DynamoDB (NoSQL Database)</h3>
+                    </div>
+
+                    <div class="why-section">
+                        <h4>💡 Why Use This Service?</h4>
+                        <p>
+                            Use DynamoDB when you need <strong>low-latency access</strong> (single-digit milliseconds) and 
+                            <strong>complex query patterns</strong>. It's a fully managed NoSQL database that excels at 
+                            key-value and document data.
+                        </p>
+                        <p>
+                            Ideal for session management, user profiles, real-time analytics, gaming leaderboards, 
+                            and any application requiring fast, consistent reads and writes at scale.
+                        </p>
+                    </div>
+
+                    <div class="pros-cons-grid">
+                        <div class="pros-section">
+                            <h4>✅ Pros</h4>
+                            <ul>
+                                <li><strong>Ultra-Fast:</strong> Single-digit millisecond latency</li>
+                                <li><strong>Fully Managed:</strong> No servers to manage or patch</li>
+                                <li><strong>Auto-Scaling:</strong> Scales automatically with demand</li>
+                                <li><strong>Global Tables:</strong> Multi-region replication built-in</li>
+                                <li><strong>Flexible Pricing:</strong> On-demand or provisioned capacity</li>
+                            </ul>
+                        </div>
+                        <div class="cons-section">
+                            <h4>❌ Cons</h4>
+                            <ul>
+                                <li><strong>More Expensive:</strong> ~10x more than S3 for storage</li>
+                                <li><strong>Query Limitations:</strong> Must design around partition keys</li>
+                                <li><strong>Learning Curve:</strong> NoSQL data modeling takes practice</li>
+                                <li><strong>Vendor Lock-in:</strong> DynamoDB-specific API</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <h4>💰 Pricing</h4>
+                        <div class="pricing-table">
+                            <div class="price-row">
+                                <span class="price-label">On-Demand Write</span>
+                                <span class="price-value">$1.25<span class="price-unit">/1M requests</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">On-Demand Read</span>
+                                <span class="price-value">$0.25<span class="price-unit">/1M requests</span></span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Data Storage</span>
+                                <span class="price-value">$0.25<span class="price-unit">/GB/month</span></span>
+                            </div>
+                        </div>
+                        <a href="https://aws.amazon.com/dynamodb/pricing/" target="_blank" class="aws-link">View AWS Documentation →</a>
+                    </div>
+                </div>
+
+                <div class="comparison-box">
+                    <h4>🤔 Quick Decision Guide</h4>
+                    <div class="comparison-grid">
+                        <div class="comparison-item s3">
+                            <strong>Choose S3 when:</strong>
+                            <ul>
+                                <li>Storing large files (images, videos, documents)</li>
+                                <li>Building data lakes for AI/ML</li>
+                                <li>Cost is the primary concern</li>
+                                <li>Access latency of seconds is acceptable</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-item dynamo">
+                            <strong>Choose DynamoDB when:</strong>
+                            <ul>
+                                <li>Need millisecond response times</li>
+                                <li>Building real-time applications</li>
+                                <li>Complex query patterns required</li>
+                                <li>Session/user state management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-section">
+                    <h3>📊 Cost Calculator</h3>
+                    <div class="calculator">
+                        <div class="calc-input-group">
+                            <label for="storage-s3">S3 Storage (GB)</label>
+                            <input type="number" id="storage-s3" value="100" min="0">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="storage-dynamo">DynamoDB Storage (GB)</label>
+                            <input type="number" id="storage-dynamo" value="10" min="0">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="storage-writes">DynamoDB Writes (millions)</label>
+                            <input type="number" id="storage-writes" value="1" min="0" step="0.1">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="storage-reads">DynamoDB Reads (millions)</label>
+                            <input type="number" id="storage-reads" value="5" min="0" step="0.1">
+                        </div>
+                        <div class="calc-result">
+                            <span class="calc-label">Estimated Monthly Cost</span>
+                            <span class="calc-value" id="storage-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Agent Core Section -->
+            <section class="tab-content" id="agent">
+                <div class="section-header">
+                    <h2>Agent Core</h2>
+                    <p>Build and deploy enterprise-grade AI agents with managed infrastructure</p>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="rec-header">
+                        <div class="rec-badge preview">PREVIEW</div>
+                        <h3>Amazon Bedrock AgentCore</h3>
+                    </div>
+
+                    <div class="why-section">
+                        <h4>💡 Why Use This Service?</h4>
+                        <p>
+                            Bedrock AgentCore is AWS's <strong>comprehensive platform for building AI agents</strong>. It handles 
+                            the complex infrastructure needed for production AI agents: runtime environment, memory management, 
+                            identity/auth, and observability — all managed by AWS.
+                        </p>
+                        <p>
+                            Instead of building agent infrastructure from scratch, AgentCore lets you focus on agent logic. 
+                            It's designed for enterprise use cases requiring security, compliance, and scalability.
+                        </p>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <span class="feature-icon">⚡</span>
+                            <h5>AgentCore Runtime</h5>
+                            <p>Managed execution environment for AI agents with automatic scaling</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">🧠</span>
+                            <h5>AgentCore Memory</h5>
+                            <p>Persistent memory for context-aware, long-running conversations</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">🔐</span>
+                            <h5>AgentCore Identity</h5>
+                            <p>Fine-grained IAM, SigV4 auth, and VPC isolation for security</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">📊</span>
+                            <h5>AgentCore Observability</h5>
+                            <p>Built-in monitoring, logging, and tracing for debugging</p>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons-grid">
+                        <div class="pros-section">
+                            <h4>✅ Pros</h4>
+                            <ul>
+                                <li><strong>Fully Managed:</strong> No infrastructure to build or maintain</li>
+                                <li><strong>Enterprise-Ready:</strong> Built-in security, compliance, and audit</li>
+                                <li><strong>Scalable:</strong> Auto-scales based on agent workload</li>
+                                <li><strong>Integrated:</strong> Works with all Bedrock models and Knowledge Bases</li>
+                                <li><strong>Observability:</strong> Deep insights into agent behavior</li>
+                            </ul>
+                        </div>
+                        <div class="cons-section">
+                            <h4>❌ Cons</h4>
+                            <ul>
+                                <li><strong>Preview Status:</strong> Not yet generally available</li>
+                                <li><strong>Pricing Unknown:</strong> Costs not yet published</li>
+                                <li><strong>AWS Lock-in:</strong> Deeply integrated with AWS ecosystem</li>
+                                <li><strong>New Platform:</strong> Limited docs and community support</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pricing-notice">
+                        <span class="notice-icon">ℹ️</span>
+                        <div>
+                            <strong>Pricing: Currently in Preview</strong>
+                            <p>Amazon Bedrock AgentCore is in preview. Pricing will be announced at general availability. Contact AWS for early access and pricing discussions.</p>
+                        </div>
+                    </div>
+
+                    <a href="https://aws.amazon.com/bedrock/" target="_blank" class="aws-link">View AWS Bedrock Documentation →</a>
+                </div>
+            </section>
+
+            <!-- LLM Models Section -->
+            <section class="tab-content" id="llm">
+                <div class="section-header">
+                    <h2>LLM Models Pricing</h2>
+                    <p>Compare pricing across Claude models — data scraped via Crawl4AI</p>
+                    <div class="data-freshness">
+                        <span class="freshness-icon">🔄</span>
+                        <span id="last-updated">Last updated: Loading...</span>
+                    </div>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="rec-header">
+                        <div class="rec-badge llm">ANTHROPIC</div>
+                        <h3>Claude Models</h3>
+                        <a href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank" class="source-link">Source ↗</a>
+                    </div>
+
+                    <div class="why-section">
+                        <h4>💡 Choosing the Right Model</h4>
+                        <p>
+                            <strong>Claude Opus 4.5</strong> — Most capable, best for complex reasoning and analysis. Use when quality matters most.
+                        </p>
+                        <p>
+                            <strong>Claude Sonnet 4.5</strong> — Best balance of speed, cost, and capability. Great for most production use cases.
+                        </p>
+                        <p>
+                            <strong>Claude Haiku 3.5</strong> — Fastest and cheapest. Ideal for simple tasks, classification, and high-volume workloads.
+                        </p>
+                    </div>
+
+                    <div class="llm-pricing-table">
+                        <div class="llm-table-header">
+                            <span class="col-model">Model</span>
+                            <span class="col-input">Input</span>
+                            <span class="col-output">Output</span>
+                            <span class="col-cache">Cache Hit</span>
+                        </div>
+                        <div id="llm-models-list">
+                            <!-- Populated by JavaScript -->
+                            <div class="llm-row">
+                                <span class="col-model"><strong>Claude Opus 4.5</strong></span>
+                                <span class="col-input">$5.00 / MTok</span>
+                                <span class="col-output">$25.00 / MTok</span>
+                                <span class="col-cache">$0.50 / MTok</span>
+                            </div>
+                            <div class="llm-row">
+                                <span class="col-model"><strong>Claude Opus 4.1</strong></span>
+                                <span class="col-input">$15.00 / MTok</span>
+                                <span class="col-output">$75.00 / MTok</span>
+                                <span class="col-cache">$1.50 / MTok</span>
+                            </div>
+                            <div class="llm-row highlight-row">
+                                <span class="col-model"><strong>Claude Sonnet 4.5</strong> <span class="best-value">BEST VALUE</span></span>
+                                <span class="col-input">$3.00 / MTok</span>
+                                <span class="col-output">$15.00 / MTok</span>
+                                <span class="col-cache">$0.30 / MTok</span>
+                            </div>
+                            <div class="llm-row">
+                                <span class="col-model"><strong>Claude Sonnet 4</strong></span>
+                                <span class="col-input">$3.00 / MTok</span>
+                                <span class="col-output">$15.00 / MTok</span>
+                                <span class="col-cache">$0.30 / MTok</span>
+                            </div>
+                            <div class="llm-row">
+                                <span class="col-model"><strong>Claude Haiku 4.5</strong></span>
+                                <span class="col-input">$1.00 / MTok</span>
+                                <span class="col-output">$5.00 / MTok</span>
+                                <span class="col-cache">$0.10 / MTok</span>
+                            </div>
+                            <div class="llm-row cheapest-row">
+                                <span class="col-model"><strong>Claude Haiku 3.5</strong> <span class="cheapest">CHEAPEST</span></span>
+                                <span class="col-input">$0.80 / MTok</span>
+                                <span class="col-output">$4.00 / MTok</span>
+                                <span class="col-cache">$0.08 / MTok</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank" class="aws-link">View Anthropic Documentation →</a>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="rec-header">
+                        <div class="rec-badge deepseek">DEEPSEEK</div>
+                        <h3>DeepSeek Models</h3>
+                        <span class="cheapest">ULTRA CHEAP</span>
+                    </div>
+
+                    <div class="why-section">
+                        <h4>💡 Why DeepSeek?</h4>
+                        <p>
+                            DeepSeek offers <strong>extremely competitive pricing</strong> — up to 95% cheaper than other frontier models. 
+                            DeepSeek V3 is their latest general-purpose model, while DeepSeek R1 is optimized for reasoning tasks.
+                        </p>
+                    </div>
+
+                    <div class="llm-pricing-table">
+                        <div class="llm-table-header">
+                            <span class="col-model">Model</span>
+                            <span class="col-input">Input</span>
+                            <span class="col-output">Output</span>
+                            <span class="col-cache">Cache Hit</span>
+                        </div>
+                        <div id="deepseek-models-list">
+                            <div class="llm-row cheapest-row">
+                                <span class="col-model"><strong>DeepSeek V3</strong> <span class="cheapest">CHEAPEST</span></span>
+                                <span class="col-input">$0.14 / MTok</span>
+                                <span class="col-output">$0.28 / MTok</span>
+                                <span class="col-cache">$0.014 / MTok</span>
+                            </div>
+                            <div class="llm-row">
+                                <span class="col-model"><strong>DeepSeek R1</strong> (Reasoning)</span>
+                                <span class="col-input">$0.55 / MTok</span>
+                                <span class="col-output">$2.19 / MTok</span>
+                                <span class="col-cache">$0.14 / MTok</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://platform.deepseek.com/api-docs/pricing" target="_blank" class="aws-link">View DeepSeek Pricing →</a>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="rec-header">
+                        <div class="rec-badge">EMBEDDINGS</div>
+                        <h3>Amazon Titan Embeddings V2</h3>
+                    </div>
+
+                    <div class="why-section">
+                        <h4>💡 Why Titan Embeddings V2?</h4>
+                        <p>
+                            Amazon Titan Text Embeddings V2 is the <strong>recommended embedding model for RAG</strong> on AWS. 
+                            It supports flexible dimensions (256, 512, 1024), 100+ languages, and integrates natively with 
+                            Bedrock Knowledge Bases.
+                        </p>
+                    </div>
+
+                    <div class="llm-pricing-table">
+                        <div class="llm-table-header">
+                            <span class="col-model">Model</span>
+                            <span class="col-input">Price</span>
+                            <span class="col-output">Dimensions</span>
+                            <span class="col-cache">Languages</span>
+                        </div>
+                        <div>
+                            <div class="llm-row highlight-row">
+                                <span class="col-model"><strong>Titan Embeddings V2</strong></span>
+                                <span class="col-input">$0.02 / MTok</span>
+                                <span class="col-output">256 / 512 / 1024</span>
+                                <span class="col-cache">100+</span>
+                            </div>
+                            <div class="llm-row">
+                                <span class="col-model"><strong>Titan Embeddings V1</strong></span>
+                                <span class="col-input">$0.10 / MTok</span>
+                                <span class="col-output">1536</span>
+                                <span class="col-cache">25+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://aws.amazon.com/bedrock/pricing/" target="_blank" class="aws-link">View AWS Bedrock Pricing →</a>
+                </div>
+
+                <div class="calculator-section">
+                    <h3>📊 LLM Cost Calculator</h3>
+                    <div class="calculator">
+                        <div class="calc-input-group">
+                            <label for="llm-model">Model</label>
+                            <select id="llm-model">
+                                <option value="opus-4.5">Claude Opus 4.5</option>
+                                <option value="opus-4.1">Claude Opus 4.1</option>
+                                <option value="sonnet-4.5" selected>Claude Sonnet 4.5</option>
+                                <option value="sonnet-4">Claude Sonnet 4</option>
+                                <option value="haiku-4.5">Claude Haiku 4.5</option>
+                                <option value="haiku-3.5">Claude Haiku 3.5</option>
+                            </select>
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="llm-input-tokens">Input Tokens (millions)</label>
+                            <input type="number" id="llm-input-tokens" value="10" min="0" step="0.1">
+                        </div>
+                        <div class="calc-input-group">
+                            <label for="llm-output-tokens">Output Tokens (millions)</label>
+                            <input type="number" id="llm-output-tokens" value="2" min="0" step="0.1">
+                        </div>
+                        <div class="calc-result">
+                            <span class="calc-label">Estimated Monthly Cost</span>
+                            <span class="calc-value" id="llm-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Commit AI Engineering Onboarding Guide</p>
+            <p class="disclaimer">Prices shown are estimates based on AWS documentation (Jan 2025). Actual costs may vary by region. Always verify with official AWS pricing pages.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

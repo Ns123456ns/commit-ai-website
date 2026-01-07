@@ -1,0 +1,4 @@
+crawl4ai>=0.7.0
+asyncio
+json
+

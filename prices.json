@@ -1,0 +1,139 @@
+{
+  "last_updated": "2025-01-07T17:45:00",
+  "scraper_version": "1.1.0",
+  "llm_models": {
+    "anthropic": {
+      "provider": "Anthropic",
+      "source_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "models": {
+        "claude-opus-4.5": {
+          "input": 5,
+          "output": 25,
+          "cache_5m_write": 6.25,
+          "cache_1h_write": 10,
+          "cache_hit": 0.50
+        },
+        "claude-opus-4.1": {
+          "input": 15,
+          "output": 75,
+          "cache_5m_write": 18.75,
+          "cache_1h_write": 30,
+          "cache_hit": 1.50
+        },
+        "claude-opus-4": {
+          "input": 15,
+          "output": 75,
+          "cache_5m_write": 18.75,
+          "cache_1h_write": 30,
+          "cache_hit": 1.50
+        },
+        "claude-sonnet-4.5": {
+          "input": 3,
+          "output": 15,
+          "cache_5m_write": 3.75,
+          "cache_1h_write": 6,
+          "cache_hit": 0.30
+        },
+        "claude-sonnet-4": {
+          "input": 3,
+          "output": 15,
+          "cache_5m_write": 3.75,
+          "cache_1h_write": 6,
+          "cache_hit": 0.30
+        },
+        "claude-haiku-4.5": {
+          "input": 1,
+          "output": 5,
+          "cache_5m_write": 1.25,
+          "cache_1h_write": 2,
+          "cache_hit": 0.10
+        },
+        "claude-haiku-3.5": {
+          "input": 0.80,
+          "output": 4,
+          "cache_5m_write": 1,
+          "cache_1h_write": 1.6,
+          "cache_hit": 0.08
+        }
+      },
+      "unit": "per 1M tokens"
+    },
+    "deepseek": {
+      "provider": "DeepSeek",
+      "source_url": "https://platform.deepseek.com/api-docs/pricing",
+      "models": {
+        "deepseek-v3": {
+          "input": 0.14,
+          "output": 0.28,
+          "cache_hit": 0.014
+        },
+        "deepseek-r1": {
+          "input": 0.55,
+          "output": 2.19,
+          "cache_hit": 0.14
+        }
+      },
+      "unit": "per 1M tokens"
+    }
+  },
+  "embeddings": {
+    "titan": {
+      "provider": "AWS Bedrock",
+      "source_url": "https://aws.amazon.com/bedrock/pricing/",
+      "models": {
+        "titan-embeddings-v2": {
+          "price": 0.02,
+          "dimensions": [256, 512, 1024],
+          "languages": "100+"
+        },
+        "titan-embeddings-v1": {
+          "price": 0.10,
+          "dimensions": [1536],
+          "languages": "25+"
+        }
+      },
+      "unit": "per 1M tokens"
+    }
+  },
+  "aws_services": {
+    "s3": {
+      "storage_standard": 0.023,
+      "storage_glacier": 0.005,
+      "put_requests": 0.005,
+      "get_requests": 0.0004,
+      "unit": "per GB/month or per 1000 requests"
+    },
+    "dynamodb": {
+      "write_on_demand": 1.25,
+      "read_on_demand": 0.25,
+      "storage": 0.25,
+      "unit": "per 1M requests or per GB/month"
+    },
+    "rekognition": {
+      "image_analysis": 1.00,
+      "video_analysis": 0.10,
+      "unit": "per 1000 images or per minute"
+    },
+    "textract": {
+      "detect_text": 0.0015,
+      "analyze_document": 0.015,
+      "analyze_expense": 0.01,
+      "free_tier": 1000,
+      "unit": "per page"
+    },
+    "polly": {
+      "standard": 4.00,
+      "neural": 16.00,
+      "unit": "per 1M characters"
+    },
+    "transcribe": {
+      "standard": 0.024,
+      "unit": "per minute"
+    },
+    "nova_sonic": {
+      "input_audio": 0.0008,
+      "output_audio": 0.0032,
+      "unit": "per second"
+    }
+  }
+}
