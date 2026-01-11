@@ -152,23 +152,24 @@ body {
 
 .tabs {
     display: flex;
-    gap: 6px;
+    gap: 4px;
     justify-content: center;
     flex-wrap: nowrap;
     overflow-x: auto;
     padding-bottom: 8px;
+    max-width: 100%;
 }
 
 .tab {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 16px;
+    gap: 5px;
+    padding: 10px 12px;
     border: 1px solid var(--border-color);
     background: var(--bg-secondary);
     color: var(--text-secondary);
     font-family: var(--font-main);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 500;
     border-radius: var(--radius-lg);
     cursor: pointer;
